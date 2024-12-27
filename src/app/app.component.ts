@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component} from '@angular/core';
+import {WindowComponent} from './terminal/window/window.component';
+import {AboutComponent} from './about/about.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [
+    WindowComponent,
+    AboutComponent
+  ],
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'mateuszbryllsh';
 }

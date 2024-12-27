@@ -2,12 +2,148 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Mateuszbryllsh</title>
+  <title>Mateusz Bryll | Shell</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Mateusz Bryll | Shell"/>
+  <meta property="og:url" content="https://shell.mateuszbryll.com/"/>
+  <meta property="og:site_name" content="Mateusz Bryll | Shell"/>
+  <meta property="article:modified_time" content="2025-01-01T19:12:27+00:00"/>
+  <meta property="og:image" content="shell.mateuszbryll.com.jpeg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="686"/>
+  <meta property="og:image:type" content="image/jpeg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
 </head>
-<body>
+<body class="background">
+  <div id="particles-js"></div>
   <app-root></app-root>
+  <script>
+    let particlesConfig = {
+      particles: {
+        number: {
+          value: 100,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: "#ffffff"
+        },
+        shape: {
+          type: "circle",
+          stroke: {
+            width: 0,
+            color: "#000000"
+          },
+          polygon: {
+            nb_sides: 5
+          }
+        },
+        opacity: {
+          value: 0.5,
+          random: true,
+          anim: {
+            enable: false,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false
+          }
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: false,
+            speed: 40,
+            size_min: 0.1,
+            sync: false
+          }
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#ffffff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "bounce",
+          bounce: false,
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200
+          }
+        }
+      },
+      interactivity: {
+        detect_on: "window",
+        events: {
+          onhover: {
+            enable: true,
+            mode: "repulse"
+          },
+          onclick: {
+            enable: false,
+            mode: "repulse"
+          },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 400,
+            line_linked: {
+              opacity: 1
+            }
+          },
+          bubble: {
+            distance: 400,
+            size: 40,
+            duration: 2,
+            opacity: 8,
+            speed: 3
+          },
+          repulse: {
+            distance: 200,
+            duration: 0.4
+          },
+          push: {
+            particles_nb: 4
+          },
+          remove: {
+            particles_nb: 2
+          }
+        }
+      },
+      retina_detect: true
+    };
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+      particlesJS('particles-js', particlesConfig);
+    });
+  </script>
+  <script>
+    var _paq = window._paq = window._paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//stats.mateuszbryll.com/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '113']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
 </body>
 </html>

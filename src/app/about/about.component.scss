@@ -1,0 +1,85 @@
+.about-card {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 20px 30px;
+  backdrop-filter: blur(5px);
+  width: 100%;
+  min-width: 300px;
+  height: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+
+  &__picture {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-image: url("../../../public/image.jpeg");
+    background-size: cover;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 20px 30px;
+  }
+
+  &__message {
+    margin-top: 2rem;
+    font-family: "Montserrat", sans-serif;
+    color: #999999;
+    text-align: center;
+    flex: 1 1 auto;
+
+    h2 {
+      color: #cdcdcd;
+      padding-bottom: 1rem;
+    }
+
+    & .terminal-command {
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+      color: #DAA520;
+    }
+  }
+
+  &__links {
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    & .link {
+      text-decoration: none;
+      text-align: center;
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+
+      &--website {
+        background-image: url("../../../public/mateuszbryllcom.png");
+        background-size: cover;
+        border-radius: 50%;
+      }
+
+      &--linkedin {
+        color: #0e76a8;
+      }
+
+      &--github {
+        color: #e8eaea;
+      }
+    }
+  }
+
+  & .footer {
+    width: 100%;
+    padding: 1rem 0;
+    color: #999999;
+    text-align: center;
+
+    a {
+      font-family: "Montserrat", sans-serif;
+      color: #DAA520;
+      text-decoration: none;
+    }
+  }
+}

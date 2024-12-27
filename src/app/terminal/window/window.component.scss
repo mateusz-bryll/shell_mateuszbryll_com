@@ -1,0 +1,123 @@
+.terminal {
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+    ),
+    url("../../../../public/terminal-background.jpg") no-repeat center center;
+  background-size: cover;
+  border-radius: 15px;
+  border: 1px solid #565759;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 20px 30px;
+
+  &__titlebar {
+    width: 100%;
+    height: 30px;
+    padding: 0 1rem;
+    background-color: #2b2b2b;
+    display: flex;
+    align-items: center;
+  }
+
+  &__buffer {
+    margin: 1rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
+    max-height: calc(100vh - 10rem);
+    max-width: calc(100vw - 30rem);
+    --sb-track-color: #2b2b2b;
+    --sb-thumb-color: #535353;
+    --sb-size: 5px;
+
+    &::-webkit-scrollbar {
+      width: var(--sb-size);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--sb-track-color);
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--sb-thumb-color);
+      border-radius: 3px;
+
+      &:hover {
+        --sb-thumb-color: #999999;
+      }
+    }
+
+    @supports not selector(::-webkit-scrollbar) {
+      & {
+        scrollbar-color: var(--sb-thumb-color)
+        var(--sb-track-color);
+      }
+    }
+  }
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  color: #999999;
+  font-size: .8em;
+}
+
+.actions {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      color: #303030;
+      font-size: 8px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.1s ease-in-out;
+    }
+
+    &:hover {
+      &:before {
+        opacity: 1;
+      }
+    }
+
+    &--close {
+      background-color: #FF605C;
+
+      &:before {
+        content: "";
+      }
+    }
+
+    &--minimise {
+      background-color: #FFBD44;
+
+      &:before {
+        content: "";
+      }
+    }
+
+    &--focus {
+      background-color: #00CA4E;
+
+      &:before {
+        content: "󰹵";
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.landingpage {
+  position: relative;
+  width: 100%;
+  min-width: 1490px;
+  height: 100%;
+  min-height: 770px;
+  max-width: 1920px;
+  overflow: hidden;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  font-family: "MesloLGL Nerd Font", "Courier New", Courier, monospace;
+
+  &__about {
+    padding: 3em 1.5em 3em 3em;
+  }
+
+  &__terminal {
+    padding: 3em 3em 3em 1.5em;
+  }
+}

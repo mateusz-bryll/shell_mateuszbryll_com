@@ -1,0 +1,43 @@
+<section class="command">
+  <div class="command__line command__line--first">
+    <div class="breadcrumbs breadcrumbs--left">
+      <div class="breadcrumbs__section breadcrumbs__section--grey">
+        <span></span>
+      </div>
+      <div class="breadcrumbs__section breadcrumbs__section--blue">
+        <span>~ {{ path }}</span>
+      </div>
+      <div *ngIf="gitBranch" class="breadcrumbs__section" [ngClass]="{'breadcrumbs__section--yellow': gitHasUncommitedChanges, 'breadcrumbs__section--green': !gitHasUncommitedChanges}">
+        <span>on   {{ gitBranch }}<span *ngIf="gitHasUncommitedChanges"> !1</span></span>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="breadcrumbs breadcrumbs--right">
+      <div *ngIf="showSshMetadata" class="breadcrumbs__section breadcrumbs__section--yellow">
+        <span>with web&#64;shell.mateuszbryll.com</span>
+      </div>
+      <div *ngIf="position" class="breadcrumbs__section breadcrumbs__section--magenta">
+        <span>{{ position }}</span>
+      </div>
+      <div *ngIf="positionStartDate" class="breadcrumbs__section breadcrumbs__section--cyan">
+        <span>from {{ positionStartDate }} </span>
+      </div>
+      <div *ngIf="promptStartTime" class="breadcrumbs__section breadcrumbs__section--grey">
+        <span>{{ promptStartTime.format('HH:mm:ss') }} </span>
+      </div>
+    </div>
+  </div>
+  <div class="command__line command__line--second">
+    <div class="breadcrumbs breadcrumbs--left">
+      <span *ngIf="!showPrompt && command" class="baked-command">{{ command }}</span>
+      <form *ngIf="showPrompt" [formGroup]="promptForm" (ngSubmit)="onExecuteCommand()">
+        <input formControlName="prompt" type="text" class="prompt" #prompt autofocus (blur)="onPromptBlur($event, prompt)">
+      </form>
+    </div>
+    <div class="breadcrumbs breadcrumbs--right">
+    </div>
+  </div>
+  <div *ngIf="commandResult" class="command__line command__line--result">
+    <pre class="command-result" [innerHTML]="commandResult"></pre>
+  </div>
+</section>
