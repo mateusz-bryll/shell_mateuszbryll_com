@@ -14,7 +14,15 @@ module.exports = {
       assets: ['./src/assets'],
       optimization: false,
       outputHashing: 'none',
-      generatePackageJson: true,
+      generatePackageJson: true
     }),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.md$/,
+        loader: 'raw-loader'
+      }
+    ]
+  }
 };
